@@ -18,7 +18,7 @@ main.on('click', 'up', function(e) {
 ajax(
   {
     url: URLeft,
-    type: 'post'
+    method: 'post'
   },
   function(data) {
     // Success!
