@@ -4,7 +4,7 @@
 
 var UI = require('ui');
 var Vibe =  require('ui/vibe');
-var URLeft = 'http://192.168.1.87/?S=0';
+var URLeft = 'http://www.bbc.co.uk';
 
 var main = new UI.Card({
   title: 'Servo.js',
@@ -18,15 +18,16 @@ main.on('click', 'up', function(e) {
 ajax(
   {
     url: URLeft,
-    method: 'post'
+    method: 'get'
   },
   function(data) {
     // Success!
-    console.log('Servo moved to the Left!');
     Vibe.vibrate('short');
+    console.log('Servo moved to the Left!');
   },
   function(error) {
     // Failure!
+    Vibe.vibrate ('long');
     console.log('Failed to move servo: OMG!! ' + error);
   }
 );
