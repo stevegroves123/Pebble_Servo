@@ -4,7 +4,7 @@
 
 var UI = require('ui');
 var Vibe =  require('ui/vibe');
-var URLeft = 'http://www.bbc.co.uk';
+var URLeft = 'http://192.168.1.87/?L=1';
 
 var main = new UI.Card({
   title: 'Servo.js',
