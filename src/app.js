@@ -3,8 +3,7 @@
  */
 
 var UI = require('ui');
-var Vibe =  require('ui/vibe');
-var URLeft = 'http://192.168.1.87/?L=1';
+var URLup = 'https://www.google.co.uk/?gws_rd=ssl';
 
 var main = new UI.Card({
   title: 'Servo.js',
@@ -17,17 +16,24 @@ main.show();
 main.on('click', 'up', function(e) {
 ajax(
   {
-    url: URLeft,
-    method: 'get'
+    url: URLup,
+    method: 'get',
+    type: 'text'
   },
-  function(data) {
+  function(success) {
     // Success!
-    Vibe.vibrate('short');
+    var return_page = new UI.Card ({
+      title:'result ',
+      body: success});
+    return_page.show ();
     console.log('Servo moved to the Left!');
   },
   function(error) {
     // Failure!
-    Vibe.vibrate ('long');
+    var error_page = new UI.Card ({
+      title: 'failure ',
+      body: 'oh dear :('});
+    error_page.show ();
     console.log('Failed to move servo: OMG!! ' + error);
   }
 );
