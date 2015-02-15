@@ -29,6 +29,16 @@
                 "type": "font"
             },
             {
+                "file": "images/It worked.png",
+                "name": "IMAGES_IT_WORKED_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/Servo Control.png",
+                "name": "IMAGES_SERVO_CONTROL_PNG",
+                "type": "png"
+            },
+            {
                 "file": "images/Main card.png",
                 "name": "IMAGES_MAIN_CARD_PNG",
                 "type": "png"
