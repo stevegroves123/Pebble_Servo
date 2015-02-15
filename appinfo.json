@@ -9,17 +9,12 @@
     "resources": {
         "media": [
             {
-                "file": "images/menu_icon.png",
-                "name": "IMAGE_MENU_ICON",
-                "type": "png"
-            },
-            {
                 "file": "images/logo_splash.png",
                 "name": "IMAGE_LOGO_SPLASH",
                 "type": "png"
             },
             {
-                "file": "images/tile_splash.png",
+                "file": "images/Main_card.png",
                 "name": "IMAGE_TILE_SPLASH",
                 "type": "png"
             },
@@ -27,21 +22,6 @@
                 "file": "fonts/UbuntuMono-Regular.ttf",
                 "name": "MONO_FONT_14",
                 "type": "font"
-            },
-            {
-                "file": "images/It worked.png",
-                "name": "IMAGES_IT_WORKED_PNG",
-                "type": "png"
-            },
-            {
-                "file": "images/Servo Control.png",
-                "name": "IMAGES_SERVO_CONTROL_PNG",
-                "type": "png"
-            },
-            {
-                "file": "images/Main card.png",
-                "name": "IMAGES_MAIN_CARD_PNG",
-                "type": "png"
             },
             {
                 "file": "images/SG.png",
