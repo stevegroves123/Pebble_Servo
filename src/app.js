@@ -16,7 +16,6 @@ main.show();
 
 // Move servo arm to the right
 main.on('click', 'up', function(e) {
-  var return_page = new UI.Card();
   ajax(
     {
       url: url + '/?S=1',
@@ -24,22 +23,19 @@ main.on('click', 'up', function(e) {
     },
     function(data) 
     { 
-      return_page.title('Right ');
-      return_page.body('\nit worked');
-      return_page.show();
+      main.title ('Right ');
+      main.body ('\nit worked');
     },
     function(error) 
     {
       // Failure!
-      return_page.title('Failed ' + error);
-      return_page.show();
+      main.title('Failed ' + error);
     }
     );
 });
 
 // Move servo arm to the left
 main.on('click', 'down', function(e) {
-  var return_page = new UI.Card();
   ajax(
     {
       url: url + '/?S=0',
@@ -47,22 +43,19 @@ main.on('click', 'down', function(e) {
     },
     function(data) 
     { 
-      return_page.title('Left ');
-      return_page.body('\nit worked');
-      return_page.show();
+      main.title('Left ');
+      main.body('\nit worked');
     },
     function(error) 
     {
       // Failure!
-      return_page.title('Failed ' + error);
-      return_page.show();
+      main.title('Failed ' + error);
     }
     );
 });
 
 // Centre the servo arm
 main.on('click', 'select', function(e) {
-  var return_page = new UI.Card();
   ajax(
     {
       url: url + '/?S=-1',
@@ -70,15 +63,13 @@ main.on('click', 'select', function(e) {
     },
     function(data) 
     { 
-      return_page.title('Centre ');
-      return_page.body('\nit worked');
-      return_page.show();
+      main.title('Centre ');
+      main.body('\nit worked');
     },
     function(error) 
     {
       // Failure!
-      return_page.title('Failed ' + error);
-      return_page.show();
+      main.title('Failed ' + error);
     }
     );
 });
