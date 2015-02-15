@@ -10,7 +10,6 @@
         "media": [
             {
                 "file": "images/menu_icon.png",
-                "menuIcon": true,
                 "name": "IMAGE_MENU_ICON",
                 "type": "png"
             },
@@ -31,6 +30,7 @@
             },
             {
                 "file": "images/SG.png",
+                "menuIcon": true,
                 "name": "IMAGES_SG_PNG",
                 "type": "png"
             }
@@ -39,7 +39,7 @@
     "shortName": "Servo control",
     "uuid": "49cdb86f-bd5f-4a7f-9228-c92b35e05102",
     "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "1.5",
     "watchapp": {
         "watchface": false
     }
