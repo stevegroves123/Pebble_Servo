@@ -9,8 +9,7 @@
     "resources": {
         "media": [
             {
-                "file": "images/Main_card.png",
-                "splashIcon": true,
+                "file": "images/tile_splash.png",
                 "name": "IMAGE_TILE_SPLASH",
                 "type": "png"
             },
