@@ -29,6 +29,11 @@
                 "type": "font"
             },
             {
+                "file": "images/Main card.png",
+                "name": "IMAGES_MAIN_CARD_PNG",
+                "type": "png"
+            },
+            {
                 "file": "images/SG.png",
                 "menuIcon": true,
                 "name": "IMAGES_SG_PNG",

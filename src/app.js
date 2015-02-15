@@ -1,16 +1,25 @@
+// ******************
+// * Servo control  *
+// * Steve Groves   *
+// * Feb 2015       *
+// ******************
+
 var UI = require('ui');
 var ajax = require('ajax');
+var url = 'http://192.168.1.87';
 var main = new UI.Card({
   title: 'Servo.js',
   body: '\nPress any button'
 });
+
 main.show();
+
 // Move servo arm to the right
 main.on('click', 'up', function(e) {
   var return_page = new UI.Card();
   ajax(
     {
-      url: 'http://192.168.1.87/?S=1',
+      url: url + '/?S=1',
       type:'post'
     },
     function(data) 
@@ -27,12 +36,13 @@ main.on('click', 'up', function(e) {
     }
     );
 });
+
 // Move servo arm to the left
 main.on('click', 'down', function(e) {
   var return_page = new UI.Card();
   ajax(
     {
-      url: 'http://192.168.1.87/?S=0',
+      url: url + '/?S=0',
       type:'post'
     },
     function(data) 
@@ -49,12 +59,13 @@ main.on('click', 'down', function(e) {
     }
     );
 });
+
 // Centre the servo arm
 main.on('click', 'select', function(e) {
   var return_page = new UI.Card();
   ajax(
     {
-      url: 'http://192.168.1.87/?S=-1',
+      url: url + '/?S=-1',
       type:'post'
     },
     function(data) 
