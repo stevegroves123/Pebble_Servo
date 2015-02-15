@@ -15,7 +15,7 @@ main.on('click', 'up', function(e) {
     },
     function(data) 
     { 
-      return_page.title('Up ');
+      return_page.title('Right ');
       return_page.body('\nit worked');
       return_page.show();
     },
@@ -37,7 +37,7 @@ main.on('click', 'down', function(e) {
     },
     function(data) 
     { 
-      return_page.title('Down ');
+      return_page.title('Left ');
       return_page.body('\nit worked');
       return_page.show();
     },
