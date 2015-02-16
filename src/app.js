@@ -29,7 +29,7 @@ main.on('click', 'up', function(e) {
     function(error) 
     {
       // Failure!
-      main.title('Failed ' + error);
+      main.title('Failed check web page');
     }
     );
 });
@@ -43,13 +43,14 @@ main.on('click', 'down', function(e) {
     },
     function(data) 
     { 
+      // success
       main.title('Left ');
       main.body('\nit worked');
     },
     function(error) 
     {
       // Failure!
-      main.title('Failed ' + error);
+      main.title('Something went wrong ');
     }
     );
 });
@@ -69,7 +70,7 @@ main.on('click', 'select', function(e) {
     function(error) 
     {
       // Failure!
-      main.title('Failed ' + error);
+      main.title('Its a trap!!');
     }
     );
 });
