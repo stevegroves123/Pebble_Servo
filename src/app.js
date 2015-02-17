@@ -15,8 +15,8 @@ var main = new UI.Card({
 main.show();
 
 // Move servo arm to the right
-main.on('click', 'up', function(e) {
-  ajax(
+  main.on('click', 'up', function(e) {
+    ajax(
     {
       url: url + '/?S=1',
       type:'post'
@@ -30,13 +30,12 @@ main.on('click', 'up', function(e) {
     {
       // Failure!
       main.title('Failed check web page');
-    }
-    );
+      main.hide ();
+    });
 });
-
-// Move servo arm to the left
-main.on('click', 'down', function(e) {
-  ajax(
+  
+  main.on ('click','down', function(e) {
+    ajax(
     {
       url: url + '/?S=0',
       type:'post'
@@ -51,26 +50,7 @@ main.on('click', 'down', function(e) {
     {
       // Failure!
       main.title('Something went wrong ');
-    }
-    );
-});
-
-// Centre the servo arm
-main.on('click', 'select', function(e) {
-  ajax(
-    {
-      url: url + '/?S=-1',
-      type:'post'
-    },
-    function(data) 
-    { 
-      main.title('Centre ');
-      main.body('\nit worked');
-    },
-    function(error) 
-    {
-      // Failure!
-      main.title('Its a trap!!');
-    }
-    );
-});
+      main.body('\n  ');
+      main.hide ();
+    });
+  });
