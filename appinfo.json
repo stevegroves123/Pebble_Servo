@@ -29,6 +29,21 @@
                 "type": "font"
             },
             {
+                "file": "images/Menu_screen.png",
+                "name": "IMAGES_MENU_SCREEN_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/main_screen.png",
+                "name": "IMAGES_MAIN_SCREEN_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/About_screen.png",
+                "name": "IMAGES_ABOUT_SCREEN_PNG",
+                "type": "png"
+            },
+            {
                 "file": "images/SG.png",
                 "menuIcon": true,
                 "name": "IMAGES_SG_PNG",
