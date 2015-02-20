@@ -7,7 +7,7 @@
 var UI = require('ui');
 var ajax = require('ajax');
 // Web facing IP address for home BT system
-var url = 'http://86.186.13.138';
+var url = 'http://109.147.184.33';
 var main = new UI.Card({
   title: 'Servo.js',
   subtitle: 'Stevie G',
