@@ -4,65 +4,63 @@
 // * Feb 2015       *
 // ******************
 
+// system variables
 var UI = require('ui');
 var ajax = require('ajax');
+var Vector2 = require('vector2');
+var Vibe = require('ui/vibe');
+var about_window = new UI.Window();
+
 // Web facing IP address for home BT system
-var url = 'http://109.147.184.33';
+var url = 'http://192.168.1.87';
+
+// Main screen
 var main = new UI.Card({
-  title: 'Servo.js',
-  subtitle: 'Stevie G',
-  body: '\nPress button to indicate location'
+  title: 'Location App',
+  textAlign:'right',
+  body:'\n     Location -->' + '\n\n        About -->'
 });
 
 main.show();
 
-// Move servo arm to the right
-  main.on('click', 'up', function(e) {
-    ajax(
+main.on('click', 'select', function(e) {
+  var menu = new UI.Menu({
+    sections: [{
+      items: [{
+        // index = 0
+        title: 'DMH'
+      }, {
+        // index = 1
+        title: 'BRS'
+      }, {
+        // index = 2
+        title: 'CAR'
+      }]
+    }]
+  });
+
+  menu.on('select', function(e) {
+    if (e.itemIndex == '2') {
+       ajax(
     {
       url: url + '/?S=1',
       type:'post'
     },
     function(data) 
     { 
+      Vibe.vibrate('single');
       console.log("Servo moved to Car");
-      main.title ('Car :) ');
-      main.body ('\nNearly there');
-      
     },
     function(error) 
     {
       // Failure!
-      main.title('Failed check web page');
+      Vibe.vibrate('double');
       console.log('Did not work - Car');
-      main.hide ();
+      Vibe.vibrate('double');
     });
-});
-  
-  main.on ('click','down', function(e) {
-    ajax(
-    {
-      url: url + '/?S=0',
-      type:'post'
-    },
-    function(data) 
-    { 
-      // success
-      console.log("Servo moved to DMK");
-      main.title('Denmark Hill');
-      main.body('\nStarting journey');
-    },
-    function(error) 
-    {
-      // Failure!
-      main.title('Something went wrong ');
-      console.log('Did not work - DMK');
-      main.hide ();
-    });
-  });
-  
-  main.on ('click','select', function(e) {
-    ajax(
+    }
+    else if (e.itemIndex == '1'){
+      ajax(
     {
       url: url + '/?S=-1',
       type:'post'
@@ -70,15 +68,53 @@ main.show();
     function(data) 
     { 
       // success
+      Vibe.vibrate('single');
       console.log("Servo moved to Bromley South");
-      main.title('Bromley South ');
-      main.body('\nHalf way home');
     },
     function(error) 
     {
       // Failure!
-      main.title('It\'s a trap!');
+      Vibe.vibrate('double');
       console.log('Did not work - Bromley South');
-      main.hide ();
+      Vibe.vibrate('double');
     });
+    }
+    else if (e.itemIndex == '0'){
+      ajax(
+    {
+      url: url + '/?S=0',
+      type:'post'
+    },
+    function(data) 
+    { 
+      // success
+      Vibe.vibrate('single');
+      console.log("Servo moved to DMK");
+    },
+    function(error) 
+    {
+      // Failure!
+      Vibe.vibrate('double');
+      console.log('Did not work - DMK');
+      Vibe.vibrate('double');
+    });
+    }
   });
+  menu.show();
+});
+
+// About screen
+main.on('click', 'down', function(e) {
+  var text = new UI.Text({
+    position: new Vector2(0, 0),
+    size: new Vector2(144, 168),
+    text:'Steve Groves \nFeb 2015 \n\nJavaScript app for Pebble',
+    font: 'gothic_28_bold',
+    color:'white',
+    textOverflow:'wrap',
+    textAlign:'left',
+    backgroundColor:'black'
+  });
+  about_window.add(text);
+  about_window.show();
+});
