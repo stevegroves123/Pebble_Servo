@@ -12,7 +12,7 @@ var Vibe = require('ui/vibe');
 var about_window = new UI.Window();
 
 // Web facing IP address for home BT system
-var url = 'http://192.168.1.87';
+var url = 'http://81.152.224.104';
 
 // Main screen
 var main = new UI.Card({
@@ -112,7 +112,7 @@ main.on('click', 'down', function(e) {
     font: 'gothic_28_bold',
     color:'white',
     textOverflow:'wrap',
-    textAlign:'left',
+    textAlign:'right',
     backgroundColor:'black'
   });
   about_window.add(text);
