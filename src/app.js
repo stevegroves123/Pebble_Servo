@@ -12,7 +12,7 @@ var Vibe = require('ui/vibe');
 var about_window = new UI.Window();
 
 // Web facing IP address for home BT system
-var url = 'http://81.152.224.104';
+var url = 'https://db.tt/qpiRqAfI';
 
 // Main screen
 var main = new UI.Card({
@@ -44,7 +44,7 @@ main.on('click', 'select', function(e) {
        ajax(
     {
       url: url + '/?S=1',
-      type:'post'
+      type:'get'
     },
     function(data) 
     { 
@@ -63,7 +63,7 @@ main.on('click', 'select', function(e) {
       ajax(
     {
       url: url + '/?S=-1',
-      type:'post'
+      type:'get'
     },
     function(data) 
     { 
@@ -83,7 +83,7 @@ main.on('click', 'select', function(e) {
       ajax(
     {
       url: url + '/?S=0',
-      type:'post'
+      type:'get'
     },
     function(data) 
     { 

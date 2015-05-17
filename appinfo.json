@@ -51,6 +51,7 @@
             }
         ]
     },
+    "sdkVersion": "3",
     "shortName": "Servo control",
     "uuid": "49cdb86f-bd5f-4a7f-9228-c92b35e05102",
     "versionCode": 1,
